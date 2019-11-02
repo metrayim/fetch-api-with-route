@@ -1,0 +1,26 @@
+.input-data{
+    border: 10px solid #cccc;
+    box-shadow: 2px 2px 2px #CCCC;
+    height: 500px;
+    width: 600px;
+    padding: 50px;
+    border-radius: 50px;
+    background-color: #F29F05;
+    background-image: url("https://www.malis-restaurant.com/phnompenh/wp-content/uploads/2015/10/fp-slider1.jpg")
+           
+}
+.Name-input{
+    border: 2px solid #cccc;
+    border-radius: 30px;
+}
+.c-btn{
+    border: 2px solid #CCCC;
+    border-radius: 30px;
+    width: 100px;
+}
+.h-style{
+    color: #F29F05;
+}
+.text-color{
+    color:#FFF6CB;
+}
