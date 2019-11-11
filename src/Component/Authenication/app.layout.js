@@ -1,7 +1,6 @@
 import React from "react";
-import auth from "./Auth";
-import Data from './App copy'
-import {Button} from 'react-bootstrap'
+import Data from '../CompoentData/App copy'
+
 
 const AppLayout = props => {
   return (

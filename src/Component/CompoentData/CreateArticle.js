@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { Form, Container, Row, Col, Button,Alert } from 'react-bootstrap';
-import "./ComponentCss/input.css"
+import { Form, Container, Row, Col, Button} from 'react-bootstrap';
+import "../ComponentCss/input.css"
+import {connect} from 'react-redux'
+import {fetchArticle} from '../../Action/articleAction'
+import { withRouter } from "react-router";
 
-export default class CreateArticle extends Component {
+ class CreateArticle extends Component {
     state = {
         id: '',
         title: '',
         description: '',
-        Datas: [],
+        // Datas: [],
     }
 
 
@@ -28,7 +31,11 @@ export default class CreateArticle extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmitArticle(this.state)
+        // this.props.onSubmitArticle(this.state)
 
+    }
+    goBack=()=>{
+        this.props.history.goBack()
     }
     render() {
         const styleTable={
@@ -36,10 +43,12 @@ export default class CreateArticle extends Component {
             borderRadius: "30px",
           }
           
-          
+          console.log(this.props,"check createArticle")
       
         return (
+            
             <div> 
+                {/* <Button onClick={this.goBack}>Back</Button> */}
                 <Container className="mt-5">
                     <Row>
                         <Col lg={2}></Col>
@@ -57,6 +66,7 @@ export default class CreateArticle extends Component {
                                 <Button style={styleTable} className="c-btn mt-4" variant="primary" type="submit" value="Submit">
                                     Submit
                             </Button>
+                           
                             </Form>
                         </Col>
                         <Col lg={3}></Col>
@@ -66,3 +76,11 @@ export default class CreateArticle extends Component {
         )
     }
 }
+const mapStatetoProps=(centralStore)=>{
+     console.log(centralStore.articleReducer.article,"update")
+    return {
+        article:centralStore.articleReducer.article
+        
+    }
+}
+export default connect(mapStatetoProps,{fetchArticle})(withRouter(CreateArticle))

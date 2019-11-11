@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import LandingPage from './Loadingpage';
-import ProtectedRoute from './Protectpage';
-import AppLayout from './app.layout';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Header from './Header/NarBar';
-import NotF from './NotFoud/Notfound';
-import View from './Component/View'
+import LandingPage from './Component/Authenication/Loadingpage';
+import ProtectedRoute from './Component/Authenication/Protectpage';
+import AppLayout from './Component/Authenication/app.layout';
+import {Route, Switch } from "react-router-dom";
+import Header from './Component/Header/NarBar';
+import NotF from './Component/NotFoud/Notfound';
+import View from './Component/CompoentData/View';
+import AboutUs from './Component/AboutUs/aboutUs'
+
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
         <Route exact path="/" component={LandingPage} />
         <ProtectedRoute exact path="/article" component={AppLayout} />
         <Route exact path="/detail/:id" component={View}/>
+        <Route exact path="/aboutus" component={AboutUs}/>
         <Route path="*" component={NotF} />
       </Switch>
+    
     </div>
   
   );

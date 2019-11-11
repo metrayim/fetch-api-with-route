@@ -1,35 +1,35 @@
 import React from 'react'
 import { withRouter } from "react-router";
-import { Card, Container, Row, Col, Text } from 'react-bootstrap'
-import '../Component/ComponentCss/view.css'
+import {  Container, Row, Col, Button } from 'react-bootstrap'
+import '../ComponentCss/view.css';
+import {connect} from 'react-redux';
+import {viewArticle} from '../../Action/articleAction'
 
 
 class View extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            article: {}
-        }
-    }
-
-    // async componentDidMount() {
-    //     const respon= await  fetch("http://api-ams.me/v1/api/articles/" + this.props.match.params.id)
-    //     const json=await respon.json();
-    //     this.setState({article:json.DATA})
-    //     console.log(json.DATA)
-
+    // constructor(props) {
+    //     super(props)
+    //     this.state = {
+    //         article: {}
+    //     }
     // }
+
     componentDidMount() {
-        fetch("http://api-ams.me/v1/api/articles/" + this.props.match.params.id)
-            .then(respon => respon.json())
-            .then(result => {
-                this.setState({
-                    article: result.DATA
-                })
-            })
+        console.log(this.props.history,"check history")
+        this.props.viewArticle(this.props.match.params.id)
+        
+        // fetch("http://api-ams.me/v1/api/articles/" + this.props.match.params.id)
+        //     .then(respon => respon.json())
+        //     .then(result => {
+        //         this.setState({
+        //             article: result.DATA
+        //         })
+        //     })
 
     }
-
+    goBack=()=>{
+        this.props.history.goBack()
+    }
     render() {
 
         const id = this.props.match.params.id
@@ -38,18 +38,16 @@ class View extends React.Component {
         if (id) {
             post = <p style={{ textAlign: 'center' }}>Loading...!</p>;
         }
-        console.log("render")
-        console.log(this.props.match.params)
-        console.log(this.state.article)
+        // console.log("render")
+        // console.log(this.props.match.params)
+        // console.log(this.state.article)
         const style = {
-            color: "#00FF47"
+            color: "#B6ECF2"
         }
+        
         return (
             <div >
-                {/* <h1>
-                    {this.state.article.DESCRIPTION}
-                    {this.state.article.TITLE}
-                </h1> */}
+               <Button onClick={this.goBack} className="ml-5 mt-4">Back</Button>
                 <Container className="mt-5">
                     <Row>
                         <Col xl={3}></Col>
@@ -61,8 +59,8 @@ class View extends React.Component {
                                     <div className="img">
                                         <img src={"https://www.malis-restaurant.com/phnompenh/wp-content/uploads/2015/10/fp-slider1.jpg"}/>
                                             </div>
-                                        <h2>{this.state.article.ID}<br/><span>{this.state.article.TITLE}</span></h2>
-                                            <p>                     {this.state.article.DESCRIPTION}</p>
+                                        <h2>{this.props.article.id}<br/><span>{this.props.article.title}</span></h2>
+                                            <p>                     {this.props.article.description}</p>
                                             <span>
                                                 <ul>
                                                     <li><a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -79,12 +77,6 @@ class View extends React.Component {
                                 <Col xl={3}></Col>
                     </Row>
                 </Container>
-
-                        {/* {this.state.article.map(art => {
-                    <ViewDetail
-                        title={art.ID}
-                    />
-                })} */}
             </div>
                     )
             
@@ -92,8 +84,11 @@ class View extends React.Component {
                 }
             
             }
+            const mapStatetoProps=(centralstore)=>{
+                // console.log(centralstore.articleReducer.article,"new View")
+                return{
+                    article:centralstore.articleReducer.article
+                }
+            }
             
-            export default withRouter(View)
-const ViewDetail = (props) => {
-    return <div>{props.title}</div>
-                    }
+            export default connect(mapStatetoProps,{viewArticle}) (withRouter(View))
