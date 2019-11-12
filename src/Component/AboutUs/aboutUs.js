@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
-import {Carousel} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 
 class aboutUs extends Component {
     render() {
         return (
             <div>
                 <Carousel>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="//static.showit.co/1600/I5B9SBOlTlWMoQRLYAWorQ/88845/sunrise-enagement-shoot.jpg"
+                            alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                            <h3>AND THIS SLIDE I DON'T KNOW  HOW TO SAY</h3>
+                            <p>START FROM HERE END FROM HERE</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
@@ -29,18 +41,7 @@ class aboutUs extends Component {
                             <p>IS THE PALCE THAT KEEP ME THERE</p>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="//static.showit.co/1600/I5B9SBOlTlWMoQRLYAWorQ/88845/sunrise-enagement-shoot.jpg"
-                            alt="Third slide"
-                        />
 
-                        <Carousel.Caption>
-                            <h3>AND THIS SLIDE I DON'T KNOW  HOW TO SAY</h3>
-                            <p>START FROM HERE END FROM HERE</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
                 </Carousel>
             </div>
         )

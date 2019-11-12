@@ -42,7 +42,7 @@ class showCard extends Component {
                                     </div>
                                     <div className="box-btn">
                                        {/* <Button>View</Button> */}
-                                       <Link to={'/detail/' + article.ID}> <Button style={style} className="mr-2 mt-1" variant="success">view</Button></Link>
+                                       <Link to={'/detail/' + article.ID}> <Button style={style} className="mr-2 mt-1" variant="success">មើល</Button></Link>
                                     </div>
                                 </div>
                             </Col>

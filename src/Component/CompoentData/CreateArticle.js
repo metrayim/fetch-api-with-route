@@ -41,6 +41,7 @@ import { withRouter } from "react-router";
         const styleTable={
             border:" 0px solid #cccc",
             borderRadius: "30px",
+            
           }
           
           console.log(this.props,"check createArticle")
@@ -55,15 +56,15 @@ import { withRouter } from "react-router";
                         <Col lg={7}>
                                 
                             <Form onSubmit={this.onSubmit}  className="input-data"> 
-                            <h1 className="mb-4 h-style">Please Input Article</h1>
+                            <h1 className="mb-4 h-style">សូមបញ្ចូលអត្ថបទ</h1>
                                 <Form.Group controlId="formBasicEmail" >
-                                    <Form.Label className="text-color">Input Title</Form.Label>
+                                    <Form.Label className="text-color">សូមបញ្ចូលចំណងជើង</Form.Label>
                                     <Form.Control className="mb-3 Name-input" placeholder="Enter Title" type="text" name="title" value={this.state.title} onChange={this.onchange} />
-                                    <Form.Label className="mt-3 text-color">Input Description</Form.Label>
+                                    <Form.Label className="mt-3 text-color">សូមបញ្ចូលការពិពណ៌នា</Form.Label>
                                     <Form.Control className=" Name-input" placeholder="Enter Description" type="text" name="description" value={this.state.description} onChange={this.onchange} />
 
                                 </Form.Group>
-                                <Button style={styleTable} className="c-btn mt-4" variant="primary" type="submit" value="Submit">
+                                <Button style={styleTable} className="c-btn mt-4" variant="success" type="submit" value="Submit">
                                     Submit
                             </Button>
                            

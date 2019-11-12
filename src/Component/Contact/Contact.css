@@ -1,0 +1,11 @@
+
+.element{
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    top: 0px;
+    left: 0px;
+    display: block;
+    background-image: url("//static.showit.co/400/uev5P9-mTaCXjBkWGzCkVQ/88845/watercolor-gold-6.png");
+}

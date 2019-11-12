@@ -104,15 +104,15 @@ class FetchData extends Component {
     render() {
         const style = {
             border: " 2px solid #cccc",
-            borderRadius: "30px",
+            borderRadius: "10px",
             width: "100px"
         }
         const styleTable = {
             border: " 0px solid #cccc",
             borderRadius: "30px",
         }
-        const alerystale = {
-            width: "200px"
+        const textStyle = {
+            color:'#28a745'
         }
         
         const text = {
@@ -129,11 +129,11 @@ class FetchData extends Component {
                 
                 {this.state.show ? <Table style={styleTable} striped bordered hover variant="light" responsive className=" table c-fetch-table table-bordered">
                     <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>TITLE</th>
-                            <th>DESCRIPTION</th>
-                            <th>ACTION</th>
+                        <tr style={textStyle}>
+                            <th>លេខសម្គាល់</th>
+                            <th>ចំណងជើង</th>
+                            <th>ការពិពណ៌នា</th>
+                            <th>សកម្មភាព</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,27 +144,10 @@ class FetchData extends Component {
                                 <td>{data.TITLE}</td>
                                 <td>{data.DESCRIPTION}</td>
                                 <td style={{ margin: 'auto' }}>
-                                    <Button style={style} className="mr-2 mt-1" variant="danger" onClick={() => { this.handleShow(data.ID) }}>Delete</Button>
-                                    <Button style={style} className="mr-2 mt-1" variant="warning" onClick={() => { this.props.onEdit(data.ID) }}>Edit</Button>
-                                    <Link to={'/detail/' + data.ID}> <Button style={style} className="mr-2 mt-1" variant="success">view</Button></Link>
-                                    {/* onClick={() => { this.deleteData(data.ID) */}
-                                    <Modal onHide={this.handleClose}>
-                                        {/* modalIsOpen */}
-                                        <Modal.Header closeButton>
-                                            <Modal.Title>សំណួរ</Modal.Title>
-                                        </Modal.Header>
-                                        <Modal.Body>តើអ្នកប្រាកបអត់ថាចង់លុបវា?</Modal.Body>
-                                        <Modal.Footer>
-
-                                            <Button variant="secondary" onClick={this.handleClose}>
-                                                Close
-                                        </Button>
-                                            <Button variant="primary" onClick={(e) => { this.deleteData(this.props.id) }}>
-                                                Save Changes
-                                        </Button>
-
-                                        </Modal.Footer>
-                                    </Modal>
+                                    <Button style={style} className="mr-2 mt-1" variant="danger" onClick={() => { this.handleShow(data.ID) }}>លុប</Button>
+                                    <Button style={style} className="mr-2 mt-1" variant="warning" onClick={() => { this.props.onEdit(data.ID) }}>កែប្រែ</Button>
+                                    <Link to={'/detail/' + data.ID}> <Button style={style} className="mr-2 mt-1" variant="success">មើល</Button></Link>
+                                    
                                 </td>
                             </tr>
                         ))}

@@ -44,4 +44,3 @@ export const articleReducer=(state=init,action)=>{
     
    
 }
-// Datas: Datas.filter(data => data.ID !== dataId)

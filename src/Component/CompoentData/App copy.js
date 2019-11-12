@@ -133,7 +133,8 @@ class App extends React.Component {
    const style={
       border:" 2px solid #cccc",
     borderRadius: "10px",
-     width:"150px"
+     width:"150px",
+     color:'#28a745'
     }
     const alerystale={
       width:"200px"
@@ -141,11 +142,11 @@ class App extends React.Component {
     
     return (
       <div> 
-         <Button onClick={this.onAdd} className="mt-5 mb-5 ml-3" style={style}>{this.props.isAdd?'Back':'ADD'}</Button>
+         <Button variant="light" onClick={this.onAdd} className="mt-5 mb-5 ml-3" style={style}>{this.props.isAdd?'ត្រលប់ក្រោយ':'បន្ថែមអត្តបទ'}</Button>
         {this.props.isAdd ? <CreateArticle onSubmitArticle={this.onSubmitArticle} article={this.state.article} /> :
           <div>
            
-            <Button onClick={this.showTable} className="mt-5 mb-5 ml-5" style={style}>{this.state.showTable?'Show Card':'Show Table'}</Button>
+            <Button variant="light" onClick={this.showTable} className="mt-5 mb-5 ml-3" style={style}>{this.state.showTable?'បង្ហាញជាកាត':'បង្ហាញជាតារាង'}</Button>
 
             
             {this.state.showTable ?<FetchData onEdit={this.onEdit} />:<ShowCard/>}
