@@ -7,7 +7,8 @@ import Header from './Component/Header/NarBar';
 import NotF from './Component/NotFoud/Notfound';
 import View from './Component/CompoentData/View';
 import AboutUs from './Component/AboutUs/aboutUs';
-import Contact from './Component/Contact/Contact'
+import Contact from './Component/Contact/Contact';
+
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/contact" component={Contact}/>
         <Route path="*" component={NotF} />
       </Switch>
+     
     
     </div>
   

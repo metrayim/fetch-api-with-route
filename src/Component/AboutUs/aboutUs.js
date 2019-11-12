@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { Carousel } from 'react-bootstrap'
+import { Carousel, Container, Row, Col } from 'react-bootstrap';
+import '../AboutUs/aboutUs.css';
+import Footer from '../Footer/footer'
 
 class aboutUs extends Component {
+    
     render() {
         return (
             <div>
@@ -43,6 +46,93 @@ class aboutUs extends Component {
                     </Carousel.Item>
 
                 </Carousel>
+                <Container>
+                    <Row>
+                        <Col md={5}className="no-padding lib-item" data-category="view">
+                            <div className="lib-panel">
+                                <div className="row box-shadow">
+                                    <div className="col-md-6">
+                                        <img className="lib-img-show" src="http://lorempixel.com/850/850/?random=123" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="lib-row lib-header">
+                                            Example library
+                                <div className="lib-header-seperator"></div>
+                                        </div>
+                                        <div className="lib-row lib-desc">
+                                            Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={6}></Col>
+                        <Col lg={6}className="no-padding lib-item" data-category="view">
+                            <div className="lib-panel">
+                                <div className="row box-shadow">
+                                    <div className="col-md-6">
+                                        <img className="lib-img-show" src="http://lorempixel.com/850/850/?random=456" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="lib-row lib-header">
+                                            Example library
+                                <div className="lib-header-seperator"></div>
+                                        </div>
+                                        <div className="lib-row lib-desc">
+                                            Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row> 
+                        <Col lg={6}className="no-padding lib-item" data-category="view">
+                            <div className="lib-panel">
+                                <div className="row box-shadow">
+                                    <div className="col-md-6">
+                                        <img className="lib-img-show" src="http://lorempixel.com/850/850/?random=123" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="lib-row lib-header">
+                                            Example library
+                                <div className="lib-header-seperator"></div>
+                                        </div>
+                                        <div className="lib-row lib-desc">
+                                            Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col lg={6}></Col>
+                    </Row>
+                    <Row>
+                        <Col lg={6}></Col>
+                        <Col lg={6}className="no-padding lib-item" data-category="view">
+                            <div className="lib-panel">
+                                <div className="row box-shadow">
+                                    <div className="col-md-6">
+                                        <img className="lib-img-show" src="http://lorempixel.com/850/850/?random=456" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="lib-row lib-header">
+                                            Example library
+                                <div className="lib-header-seperator"></div>
+                                        </div>
+                                        <div className="lib-row lib-desc">
+                                            Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
+                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+                
+                <Footer/>
             </div>
         )
     }

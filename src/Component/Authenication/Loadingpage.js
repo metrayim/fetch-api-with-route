@@ -108,7 +108,8 @@ const LandingPage = props => {
 };
 export default LandingPage;
 const textStyle = {
-  marginLeft: '440px',
+  // marginLeft: '440px',
+  textAlign:'center', 
   fontFamily: ' Kristi',
   color: '#FF9924'
 }

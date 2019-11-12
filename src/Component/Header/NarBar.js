@@ -24,10 +24,6 @@ class NarBar extends React.Component {
                         <Nav.Link href="/aboutus">អំពីយើង</Nav.Link>
                         <Nav.Link href="/contact">ទំនាក់ទំនង</Nav.Link>
                     </Nav>
-                    {/* <Form inline>
-                        <FormControl style={style} type="text" placeholder="ស្វែងរក" className="mr-sm-2" />
-                        <Button style={style} variant="outline-success">ស្វែងរក</Button>
-                    </Form> */}
                 </Navbar.Collapse>
             </Navbar>
         )
